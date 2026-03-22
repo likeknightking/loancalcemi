@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: 'EMI Calculator — Fast & Free',
     description: 'Calculate your monthly loan EMI instantly. No registration required.',
     type: 'website',
+    url: 'https://www.loancalcemi.com',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
