@@ -6,7 +6,7 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://loancalcemi.com'),
+  metadataBase: new URL('https://www.loancalcemi.com'),
   title: 'EMI Calculator — Calculate Loan EMI Instantly | Free Tool',
   description:
     'Free EMI calculator. Enter loan amount, interest rate, and tenure to instantly calculate monthly EMI, total interest, and see a full amortization schedule. No sign-up required.',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'EMI Calculator — Fast & Free',
     description: 'Calculate your monthly loan EMI instantly. No registration required.',
     type: 'website',
-    url: 'https://loancalcemi.com',
+    url: 'https://www.loancalcemi.com',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {

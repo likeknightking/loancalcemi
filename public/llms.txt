@@ -11,7 +11,7 @@
 - No registration required
 
 ## URL
-https://loancalcemi.com
+https://www.loancalcemi.com
 
 ## Usage
 Enter loan amount, annual interest rate, and tenure (years) to instantly see monthly EMI, total interest payable, and complete repayment schedule. Supports home loans, car loans, personal loans, and education loans. Download the full schedule as CSV.
