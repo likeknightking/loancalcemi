@@ -1,0 +1,143 @@
+import EMICalculator from '@/components/EMICalculator'
+import AdSlot from '@/components/AdSlot'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'EMI Calculator',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description: 'Free EMI calculator. Calculate monthly loan EMI, total interest, and view a full amortization schedule.',
+}
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is EMI?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'EMI stands for Equated Monthly Installment. It is the fixed amount you pay every month to repay a loan over a set period. Each EMI covers both principal repayment and interest.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is EMI calculated?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'EMI = P × r × (1 + r)^n / ((1 + r)^n - 1), where P is the principal loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100), and n is the number of monthly installments.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a higher tenure reduce EMI?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A longer tenure reduces your monthly EMI because the principal is spread over more payments. However, you end up paying significantly more total interest over the life of the loan.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is an amortization schedule?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An amortization schedule is a table showing the breakdown of each monthly payment — how much goes toward principal and how much is interest — along with the remaining balance after each payment.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can I reduce my EMI?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You can reduce your EMI by: (1) making a larger down payment to reduce the principal, (2) negotiating a lower interest rate, (3) extending the loan tenure, or (4) making prepayments to reduce the outstanding balance.',
+      },
+    },
+  ],
+}
+
+export default function Home() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
+      <div className="min-h-screen bg-slate-50">
+        {/* Header */}
+        <header className="bg-white border-b border-slate-200 px-4 py-4 shadow-sm">
+          <div className="max-w-2xl mx-auto">
+            <h1 className="text-lg font-bold text-slate-800">💰 EMI Calculator</h1>
+          </div>
+        </header>
+
+        <main className="max-w-2xl mx-auto px-4 py-8">
+          <div className="mb-8 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-2">Loan EMI Calculator</h2>
+            <p className="text-slate-500">Calculate your monthly EMI, total interest, and full repayment schedule instantly.</p>
+          </div>
+
+          <EMICalculator />
+
+          {/* SEO Content */}
+          <article className="mt-16 space-y-8">
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">What is EMI?</h2>
+              <p className="text-slate-600 leading-relaxed">
+                An <strong>Equated Monthly Installment (EMI)</strong> is the fixed monthly payment you make to a lender to repay a loan over a defined period. Every EMI consists of two components: a portion that repays the principal (the original loan amount) and a portion that pays the interest charged by the lender.
+              </p>
+              <p className="text-slate-600 leading-relaxed mt-3">
+                In the early months of a loan, the interest component of each EMI is higher. As the outstanding balance decreases with each payment, the interest component gradually shrinks and more of your EMI goes toward the principal. This structure is called an <strong>amortizing loan</strong>.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">How is EMI Calculated?</h2>
+              <p className="text-slate-600 leading-relaxed">
+                The EMI formula is: <code className="bg-slate-100 px-2 py-0.5 rounded text-sm">EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1)</code>
+              </p>
+              <ul className="mt-3 space-y-1 text-slate-600 list-disc list-inside">
+                <li><strong>P</strong> = Principal loan amount</li>
+                <li><strong>r</strong> = Monthly interest rate (annual rate ÷ 12 ÷ 100)</li>
+                <li><strong>n</strong> = Total number of monthly payments</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed mt-3">
+                For example, a $100,000 loan at 8% annual interest for 10 years (120 months) gives a monthly rate of 0.667% and an EMI of approximately $1,213.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">Tips to Reduce Your EMI</h2>
+              <ul className="space-y-2 text-slate-600">
+                <li className="flex gap-2"><span className="text-emerald-500 font-bold">1.</span> <span><strong>Larger down payment:</strong> Reducing the principal directly reduces your EMI.</span></li>
+                <li className="flex gap-2"><span className="text-emerald-500 font-bold">2.</span> <span><strong>Negotiate rate:</strong> Even 0.5% less can save thousands over a long loan term.</span></li>
+                <li className="flex gap-2"><span className="text-emerald-500 font-bold">3.</span> <span><strong>Prepayments:</strong> Extra payments early in the loan term dramatically cut total interest.</span></li>
+                <li className="flex gap-2"><span className="text-emerald-500 font-bold">4.</span> <span><strong>Shorter tenure:</strong> Higher EMI but much less total interest paid.</span></li>
+              </ul>
+            </section>
+
+            {/* In-article ad */}
+            <AdSlot slot="1122334455" format="article" />
+
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {faqJsonLd.mainEntity.map(faq => (
+                  <div key={faq.name}>
+                    <h3 className="text-lg font-semibold text-slate-800">{faq.name}</h3>
+                    <p className="text-slate-600 leading-relaxed mt-1">{faq.acceptedAnswer.text}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </article>
+        </main>
+
+        <footer className="border-t border-slate-200 mt-16 py-8 text-center bg-white">
+          <p className="text-slate-400 text-sm">EMI Calculator — Free loan calculator. No sign-up required.</p>
+        </footer>
+      </div>
+    </>
+  )
+}

@@ -1,0 +1,17 @@
+# EMI Calculator
+> Free online tool to calculate Equated Monthly Installments for any loan.
+
+## Features
+- Instant EMI calculation using standard Price Table formula
+- Interactive donut chart showing principal vs interest breakdown
+- Full month-by-month amortization schedule
+- CSV export of amortization data
+- Multi-currency display (USD, INR, EUR, GBP, BRL, CAD, AUD)
+- Animated results with odometer effect
+- No registration required
+
+## URL
+https://www.loancalcemi.com
+
+## Usage
+Enter loan amount, annual interest rate, and tenure (years) to instantly see monthly EMI, total interest payable, and complete repayment schedule. Supports home loans, car loans, personal loans, and education loans. Download the full schedule as CSV.
