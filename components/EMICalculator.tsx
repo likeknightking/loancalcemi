@@ -39,6 +39,9 @@ export default function EMICalculator() {
       {/* Donut chart */}
       <DonutChart result={result} currency={currency} principal={principal} />
 
+      {/* Ad — between chart and amortization table */}
+      <AdSlot slot="5566778899" format="horizontal" />
+
       {/* Amortization table */}
       <AmortizationTable schedule={result.schedule} currency={currency} />
 
