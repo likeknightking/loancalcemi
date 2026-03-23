@@ -1,5 +1,6 @@
 import EMICalculator from '@/components/EMICalculator'
 import AdSlot from '@/components/AdSlot'
+import LoanNav from '@/components/LoanNav'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -55,6 +56,30 @@ const faqJsonLd = {
         text: 'You can reduce your EMI by: (1) making a larger down payment to reduce the principal, (2) negotiating a lower interest rate, (3) extending the loan tenure, or (4) making prepayments to reduce the outstanding balance.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between flat rate and reducing balance interest?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'With a flat rate, interest is calculated on the original loan amount throughout the tenure, making the effective rate higher. With a reducing balance (or diminishing balance) method, interest is calculated on the outstanding principal, which decreases with each payment. Most EMI calculators, including this one, use the reducing balance method, which is the standard for bank loans.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does prepaying a loan save money on interest?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, prepaying a loan reduces the outstanding principal, which lowers the total interest you pay over the remaining term. Making even small extra payments early in the loan term has a disproportionately large impact because it reduces the balance on which future interest is calculated. Check your loan agreement for any prepayment penalties before making extra payments.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does the interest rate affect total loan cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Even a small change in interest rate can significantly affect the total cost of a loan, especially over long tenures. For example, on a $200,000 loan over 20 years, the difference between 7% and 8% interest adds up to more than $30,000 in additional interest. Always compare rates from multiple lenders and consider the total interest paid, not just the monthly payment.',
+      },
+    },
   ],
 }
 
@@ -73,6 +98,8 @@ export default function Home() {
         </header>
 
         <main className="max-w-2xl mx-auto px-4 py-8">
+          <LoanNav />
+
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold text-slate-900 mb-2">Loan EMI Calculator</h2>
             <p className="text-slate-500">Calculate your monthly EMI, total interest, and full repayment schedule instantly.</p>
@@ -88,7 +115,7 @@ export default function Home() {
                 An <strong>Equated Monthly Installment (EMI)</strong> is the fixed monthly payment you make to a lender to repay a loan over a defined period. Every EMI consists of two components: a portion that repays the principal (the original loan amount) and a portion that pays the interest charged by the lender.
               </p>
               <p className="text-slate-600 leading-relaxed mt-3">
-                In the early months of a loan, the interest component of each EMI is higher. As the outstanding balance decreases with each payment, the interest component gradually shrinks and more of your EMI goes toward the principal. This structure is called an <strong>amortizing loan</strong>.
+                In the early months of a loan, the interest component of each EMI is higher. As the outstanding balance decreases with each payment, the interest component gradually shrinks and more of your EMI goes toward the principal. This structure is called an <strong>amortizing loan</strong>. Understanding this split helps you appreciate why making extra payments early in the loan term can save a significant amount of interest over the life of the loan.
               </p>
             </section>
 
@@ -103,22 +130,32 @@ export default function Home() {
                 <li><strong>n</strong> = Total number of monthly payments</li>
               </ul>
               <p className="text-slate-600 leading-relaxed mt-3">
-                For example, a $100,000 loan at 8% annual interest for 10 years (120 months) gives a monthly rate of 0.667% and an EMI of approximately $1,213.
+                For example, a $100,000 loan at 8% annual interest for 10 years (120 months) gives a monthly rate of 0.667% and an EMI of approximately $1,213. Over the full 120 months, you would pay roughly $45,600 in total interest, bringing the total repayment to about $145,600. This formula uses the reducing balance method, which is the standard used by banks and financial institutions worldwide.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-slate-900 mb-3">Tips to Reduce Your EMI</h2>
               <ul className="space-y-2 text-slate-600">
-                <li className="flex gap-2"><span className="text-emerald-500 font-bold">1.</span> <span><strong>Larger down payment:</strong> Reducing the principal directly reduces your EMI.</span></li>
-                <li className="flex gap-2"><span className="text-emerald-500 font-bold">2.</span> <span><strong>Negotiate rate:</strong> Even 0.5% less can save thousands over a long loan term.</span></li>
-                <li className="flex gap-2"><span className="text-emerald-500 font-bold">3.</span> <span><strong>Prepayments:</strong> Extra payments early in the loan term dramatically cut total interest.</span></li>
-                <li className="flex gap-2"><span className="text-emerald-500 font-bold">4.</span> <span><strong>Shorter tenure:</strong> Higher EMI but much less total interest paid.</span></li>
+                <li className="flex gap-2"><span className="text-emerald-500 font-bold">1.</span> <span><strong>Larger down payment:</strong> Reducing the principal directly reduces your EMI. Even a modest increase in down payment can lower your monthly obligation noticeably.</span></li>
+                <li className="flex gap-2"><span className="text-emerald-500 font-bold">2.</span> <span><strong>Negotiate rate:</strong> Even 0.5% less can save thousands over a long loan term. Compare offers from multiple lenders before committing.</span></li>
+                <li className="flex gap-2"><span className="text-emerald-500 font-bold">3.</span> <span><strong>Prepayments:</strong> Extra payments early in the loan term dramatically cut total interest because they reduce the principal on which future interest is calculated.</span></li>
+                <li className="flex gap-2"><span className="text-emerald-500 font-bold">4.</span> <span><strong>Shorter tenure:</strong> Higher EMI but much less total interest paid. If your budget allows, a shorter term is almost always the more cost-effective choice.</span></li>
               </ul>
             </section>
 
             {/* In-article ad */}
             <AdSlot slot="1122334455" format="article" />
+
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">Understanding Amortization and Loan Costs</h2>
+              <p className="text-slate-600 leading-relaxed">
+                An <strong>amortization schedule</strong> is a complete table of loan payments showing the breakdown of each installment into principal and interest, along with the remaining balance after each payment. Reviewing your amortization schedule reveals how much of each payment is building your equity versus paying the lender for the cost of borrowing.
+              </p>
+              <p className="text-slate-600 leading-relaxed mt-3">
+                The total cost of a loan extends well beyond the principal amount. Interest charges, processing fees, and insurance requirements can add substantially to what you ultimately pay. When comparing loan offers, focus on the total repayment amount and the annual percentage rate (APR), which includes fees and gives a more accurate picture of the true cost of borrowing. Use the amortization table generated by this calculator to visualize exactly where each dollar of your payment goes over the life of the loan.
+              </p>
+            </section>
 
             <section>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>

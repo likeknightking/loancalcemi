@@ -8,10 +8,20 @@ import DonutChart from './DonutChart'
 import AmortizationTable from './AmortizationTable'
 import AdSlot from './AdSlot'
 
-export default function EMICalculator() {
-  const [principal, setPrincipal] = useState(500000)
-  const [annualRate, setAnnualRate] = useState(8.5)
-  const [tenureYears, setTenureYears] = useState(10)
+interface EMICalculatorProps {
+  defaultPrincipal?: number
+  defaultRate?: number
+  defaultTenure?: number
+}
+
+export default function EMICalculator({
+  defaultPrincipal = 500000,
+  defaultRate = 8.5,
+  defaultTenure = 10,
+}: EMICalculatorProps = {}) {
+  const [principal, setPrincipal] = useState(defaultPrincipal)
+  const [annualRate, setAnnualRate] = useState(defaultRate)
+  const [tenureYears, setTenureYears] = useState(defaultTenure)
   const [currency, setCurrency] = useState<CurrencyCode>('USD')
 
   const result = useMemo(
