@@ -50,13 +50,13 @@ export default function EMICalculator({
       <DonutChart result={result} currency={currency} principal={principal} />
 
       {/* Ad — between chart and amortization table */}
-      <AdSlot slot="5566778899" format="horizontal" />
+      <AdSlot slot="8990089492" format="horizontal" />
 
       {/* Amortization table */}
       <AmortizationTable schedule={result.schedule} currency={currency} />
 
       {/* Ad — below tool, before content */}
-      <AdSlot slot="0987654321" format="rectangle" className="mx-auto" />
+      <AdSlot slot="7949171264" format="rectangle" className="mx-auto" />
     </div>
   )
 }

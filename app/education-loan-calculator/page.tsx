@@ -160,7 +160,7 @@ export default function EducationLoanCalculatorPage() {
               </ul>
             </section>
 
-            <AdSlot slot="1122334455" format="article" />
+            <AdSlot slot="2696844582" format="article" />
 
             <section>
               <h2 className="text-2xl font-bold text-slate-900 mb-3">Planning Your Education Financing</h2>

@@ -150,7 +150,7 @@ export default function Home() {
             </section>
 
             {/* In-article ad */}
-            <AdSlot slot="1122334455" format="article" />
+            <AdSlot slot="2696844582" format="article" />
 
             <section>
               <h2 className="text-2xl font-bold text-slate-900 mb-3">Understanding Amortization and Loan Costs</h2>
