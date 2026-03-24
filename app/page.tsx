@@ -1,6 +1,7 @@
 import EMICalculator from '@/components/EMICalculator'
 import AdSlot from '@/components/AdSlot'
 import LoanNav from '@/components/LoanNav'
+import Footer from '@/components/Footer'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -105,6 +106,10 @@ export default function Home() {
             <p className="text-slate-500">Calculate your monthly EMI, total interest, and full repayment schedule instantly.</p>
           </div>
 
+          <p className="text-slate-600 leading-relaxed mb-8 text-center max-w-xl mx-auto">
+            Understanding your loan repayment schedule is crucial before committing to any financing. This EMI calculator uses the standard amortization formula to give you an accurate breakdown of monthly payments, total interest, and a complete repayment timeline. Enter your loan details below to see exactly how much you will pay each month.
+          </p>
+
           <EMICalculator />
 
           {/* SEO Content */}
@@ -171,9 +176,7 @@ export default function Home() {
           </article>
         </main>
 
-        <footer className="border-t border-slate-200 mt-16 py-8 text-center bg-white">
-          <p className="text-slate-400 text-sm">EMI Calculator — Free loan calculator. No sign-up required.</p>
-        </footer>
+        <Footer />
       </div>
     </>
   )
