@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description: 'Calculate EMI, total interest, and get a full amortization schedule.',
   },
   robots: { index: true, follow: true },
+  alternates: { canonical: 'https://loancalcemi.com' },
   other: { 'google-adsense-account': 'ca-pub-7584346505499429' },
 }
 

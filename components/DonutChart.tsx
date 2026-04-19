@@ -1,6 +1,6 @@
 'use client'
 
-import dynamic from 'next/dynamic'
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
 import { EMIResult, CurrencyCode, formatCurrency } from '@/lib/emi-calculator'
 
 interface Props {
@@ -9,9 +9,7 @@ interface Props {
   principal: number
 }
 
-function DonutChartInner({ result, currency, principal }: Props) {
-  const { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } = require('recharts')
-
+export default function DonutChart({ result, currency, principal }: Props) {
   const data = [
     { name: 'Principal', value: principal, color: '#10B981' },
     { name: 'Interest', value: result.totalInterest, color: '#F59E0B' },
@@ -36,12 +34,12 @@ function DonutChartInner({ result, currency, principal }: Props) {
                 paddingAngle={3}
                 dataKey="value"
               >
-                {data.map((entry: { color: string }, index: number) => (
+                {data.map((entry, index) => (
                   <Cell key={index} fill={entry.color} />
                 ))}
               </Pie>
               <Tooltip
-                formatter={(value: number) => formatCurrency(Number(value), currency)}
+                formatter={(value) => formatCurrency(Number(value), currency)}
                 contentStyle={{ fontSize: 12, borderRadius: 8 }}
               />
             </PieChart>
@@ -70,5 +68,3 @@ function DonutChartInner({ result, currency, principal }: Props) {
     </div>
   )
 }
-
-export default dynamic(() => Promise.resolve(DonutChartInner), { ssr: false })

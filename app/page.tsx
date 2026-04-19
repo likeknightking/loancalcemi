@@ -94,7 +94,7 @@ export default function Home() {
         {/* Header */}
         <header className="bg-white border-b border-slate-200 px-4 py-4 shadow-sm">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-lg font-bold text-slate-800">💰 EMI Calculator</h1>
+            <div className="text-lg font-bold text-slate-800">💰 EMI Calculator</div>
           </div>
         </header>
 
@@ -102,7 +102,7 @@ export default function Home() {
           <LoanNav />
 
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">Loan EMI Calculator</h2>
+            <h1 className="text-3xl font-bold text-slate-900 mb-2">Loan EMI Calculator</h1>
             <p className="text-slate-500">Calculate your monthly EMI, total interest, and full repayment schedule instantly.</p>
           </div>
 

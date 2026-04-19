@@ -112,7 +112,7 @@ export default function CarLoanCalculatorPage() {
       <div className="min-h-screen bg-slate-50">
         <header className="bg-white border-b border-slate-200 px-4 py-4 shadow-sm">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-lg font-bold text-slate-800">💰 EMI Calculator</h1>
+            <div className="text-lg font-bold text-slate-800">💰 EMI Calculator</div>
           </div>
         </header>
 
@@ -120,7 +120,7 @@ export default function CarLoanCalculatorPage() {
           <LoanNav />
 
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">Car Loan Calculator</h2>
+            <h1 className="text-3xl font-bold text-slate-900 mb-2">Car Loan Calculator</h1>
             <p className="text-slate-500">Calculate your monthly auto loan payment, total interest, and full repayment schedule.</p>
           </div>
 
@@ -186,10 +186,6 @@ export default function CarLoanCalculatorPage() {
           </article>
         </main>
         <Footer />
-
-        <footer className="border-t border-slate-200 mt-16 py-8 text-center bg-white">
-          <p className="text-slate-400 text-sm">EMI Calculator — Free loan calculator. No sign-up required.</p>
-        </footer>
       </div>
     </>
   )
