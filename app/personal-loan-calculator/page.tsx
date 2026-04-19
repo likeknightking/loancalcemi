@@ -124,7 +124,7 @@ export default function PersonalLoanCalculatorPage() {
             <p className="text-slate-500">Calculate your monthly personal loan payment, total interest, and full repayment schedule.</p>
           </div>
 
-          <EMICalculator defaultPrincipal={15000} defaultRate={12} defaultTenure={3} />
+          <EMICalculator defaultPrincipal={15000} defaultRate={12} defaultTenure={3} mode="personal_loan" />
 
           <article className="mt-16 space-y-8">
             <section>

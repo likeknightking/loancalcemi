@@ -124,7 +124,7 @@ export default function MortgageCalculatorPage() {
             <p className="text-slate-500">Estimate your monthly home loan payment, total interest, and full amortization schedule.</p>
           </div>
 
-          <EMICalculator defaultPrincipal={300000} defaultRate={6.5} defaultTenure={25} />
+          <EMICalculator defaultPrincipal={300000} defaultRate={6.5} defaultTenure={25} mode="mortgage" />
 
           <article className="mt-16 space-y-8">
             <section>

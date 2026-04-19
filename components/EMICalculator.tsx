@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { calculateEMI, CurrencyCode } from '@/lib/emi-calculator'
+import { trackToolUsed } from '@/lib/track'
 import CalculatorInputs from './CalculatorInputs'
 import CalculatorResults from './CalculatorResults'
 import DonutChart from './DonutChart'
@@ -12,17 +13,24 @@ interface EMICalculatorProps {
   defaultPrincipal?: number
   defaultRate?: number
   defaultTenure?: number
+  mode?: 'emi' | 'mortgage' | 'car_loan' | 'personal_loan' | 'education_loan'
 }
 
 export default function EMICalculator({
   defaultPrincipal = 500000,
   defaultRate = 8.5,
   defaultTenure = 10,
+  mode = 'emi',
 }: EMICalculatorProps = {}) {
   const [principal, setPrincipal] = useState(defaultPrincipal)
   const [annualRate, setAnnualRate] = useState(defaultRate)
   const [tenureYears, setTenureYears] = useState(defaultTenure)
   const [currency, setCurrency] = useState<CurrencyCode>('USD')
+
+  useEffect(() => {
+    trackToolUsed(mode)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const result = useMemo(
     () => calculateEMI(principal, annualRate, tenureYears * 12),

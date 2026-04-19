@@ -124,7 +124,7 @@ export default function EducationLoanCalculatorPage() {
             <p className="text-slate-500">Calculate your monthly student loan payment, total interest, and full repayment schedule.</p>
           </div>
 
-          <EMICalculator defaultPrincipal={50000} defaultRate={5.5} defaultTenure={10} />
+          <EMICalculator defaultPrincipal={50000} defaultRate={5.5} defaultTenure={10} mode="education_loan" />
 
           <article className="mt-16 space-y-8">
             <section>

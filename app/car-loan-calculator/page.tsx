@@ -124,7 +124,7 @@ export default function CarLoanCalculatorPage() {
             <p className="text-slate-500">Calculate your monthly auto loan payment, total interest, and full repayment schedule.</p>
           </div>
 
-          <EMICalculator defaultPrincipal={35000} defaultRate={7.5} defaultTenure={5} />
+          <EMICalculator defaultPrincipal={35000} defaultRate={7.5} defaultTenure={5} mode="car_loan" />
 
           <article className="mt-16 space-y-8">
             <section>
